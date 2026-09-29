@@ -1,0 +1,76 @@
+Employee ID,Employee Name,Department,Location / Hub,Month,Working Days,Present Days,Attendance %,Monthly Target,Actual Handled,Target Achievement %,SLA %,Accuracy %,Average TAT (hrs),Error / Rework Count,Overtime Hours
+NSF2001,Lokesh Fernandes,Operations,Kochi Hub,May 2026,25,23,92.0,640,541,84.5,86.8,95.93,4.2,22,14.4
+NSF2001,Lokesh Fernandes,Operations,Kochi Hub,Jun 2026,26,24,92.3,570,399,70.0,82.8,98.25,4.4,7,16.3
+NSF2001,Lokesh Fernandes,Operations,Kochi Hub,Jul 2026,26,25,96.2,670,686,102.4,90.5,98.4,4.8,11,12.8
+NSF2001,Lokesh Fernandes,Operations,Kochi Hub,Aug 2026,26,24,92.3,650,626,96.3,83.0,96.33,4.4,23,18.3
+NSF2001,Lokesh Fernandes,Operations,Kochi Hub,Sep 2026,25,23,92.0,680,634,93.2,86.7,98.9,4.6,7,19.9
+NSF2002,Omar Raman,Operations,Kochi Hub,May 2026,25,23,92.0,410,425,103.7,91.5,98.12,4.1,8,0.1
+NSF2002,Omar Raman,Operations,Kochi Hub,Jun 2026,26,25,96.2,730,708,97.0,95.7,98.59,3.7,10,21.9
+NSF2002,Omar Raman,Operations,Kochi Hub,Jul 2026,26,26,100.0,440,466,105.9,94.9,96.35,4.3,17,20.5
+NSF2002,Omar Raman,Operations,Kochi Hub,Aug 2026,26,25,96.2,640,692,108.1,95.4,99.13,4.1,6,12.4
+NSF2002,Omar Raman,Operations,Kochi Hub,Sep 2026,25,23,92.0,680,785,115.4,90.9,96.43,4.0,28,18.9
+NSF2003,Chirag Fernandes,Customer Support,Delhi Hub,May 2026,25,24,96.0,840,926,110.2,99.5,97.19,1.8,26,3.4
+NSF2003,Chirag Fernandes,Customer Support,Delhi Hub,Jun 2026,26,26,100.0,550,576,104.7,99.4,98.09,2.1,11,16.0
+NSF2003,Chirag Fernandes,Customer Support,Delhi Hub,Jul 2026,26,24,92.3,760,821,108.0,98.6,97.08,1.9,24,16.1
+NSF2003,Chirag Fernandes,Customer Support,Delhi Hub,Aug 2026,26,24,92.3,710,801,112.8,97.1,97.0,2.0,24,12.6
+NSF2003,Chirag Fernandes,Customer Support,Delhi Hub,Sep 2026,25,25,100.0,680,758,111.5,99.5,97.36,1.8,20,21.5
+NSF2004,Chirag Lal,Operations,Jaipur Hub,May 2026,25,25,100.0,470,552,117.4,94.2,98.73,3.8,7,19.6
+NSF2004,Chirag Lal,Operations,Jaipur Hub,Jun 2026,26,25,96.2,610,624,102.3,89.2,99.36,4.1,4,26.9
+NSF2004,Chirag Lal,Operations,Jaipur Hub,Jul 2026,26,24,92.3,460,368,80.0,89.7,97.28,4.4,10,22.5
+NSF2004,Chirag Lal,Operations,Jaipur Hub,Aug 2026,26,26,100.0,610,627,102.8,92.1,96.81,4.7,20,21.5
+NSF2004,Chirag Lal,Operations,Jaipur Hub,Sep 2026,25,24,96.0,640,721,112.7,92.8,98.06,3.4,14,17.7
+NSF2005,Uday Iyengar,Warehouse,Kochi Hub,May 2026,25,22,88.0,1150,1360,118.3,92.5,96.62,2.7,46,11.8
+NSF2005,Uday Iyengar,Warehouse,Kochi Hub,Jun 2026,26,25,96.2,1400,1618,115.6,93.8,97.9,2.5,34,22.1
+NSF2005,Uday Iyengar,Warehouse,Kochi Hub,Jul 2026,26,26,100.0,950,1116,117.5,96.6,98.57,2.6,16,19.3
+NSF2005,Uday Iyengar,Warehouse,Kochi Hub,Aug 2026,26,24,92.3,1520,1354,89.1,95.1,96.53,2.4,47,16.3
+NSF2005,Uday Iyengar,Warehouse,Kochi Hub,Sep 2026,25,25,100.0,1380,1619,117.3,98.7,97.16,2.3,46,25.9
+NSF2006,Aarti Lal,Warehouse,Surat Hub,May 2026,25,22,88.0,1400,1141,81.5,90.8,96.84,3.0,36,9.2
+NSF2006,Aarti Lal,Warehouse,Surat Hub,Jun 2026,26,22,84.6,1440,1342,93.2,94.0,96.72,2.6,44,16.6
+NSF2006,Aarti Lal,Warehouse,Surat Hub,Jul 2026,26,26,100.0,1300,1501,115.5,95.1,97.34,2.7,40,12.2
+NSF2006,Aarti Lal,Warehouse,Surat Hub,Aug 2026,26,24,92.3,1290,1308,101.4,95.8,98.09,2.4,25,20.3
+NSF2006,Aarti Lal,Warehouse,Surat Hub,Sep 2026,25,22,88.0,870,804,92.4,92.1,97.14,2.6,23,13.5
+NSF2007,Tanya Menon,Customer Support,Kochi Hub,May 2026,25,23,92.0,660,710,107.6,91.4,98.31,2.4,12,13.7
+NSF2007,Tanya Menon,Customer Support,Kochi Hub,Jun 2026,26,25,96.2,720,670,93.1,91.0,97.61,2.1,16,14.0
+NSF2007,Tanya Menon,Customer Support,Kochi Hub,Jul 2026,26,25,96.2,570,620,108.8,87.5,98.23,2.5,11,19.9
+NSF2007,Tanya Menon,Customer Support,Kochi Hub,Aug 2026,26,25,96.2,820,822,100.2,94.9,99.03,2.0,8,6.9
+NSF2007,Tanya Menon,Customer Support,Kochi Hub,Sep 2026,25,24,96.0,730,704,96.4,94.1,99.01,2.3,7,24.7
+NSF2008,Chirag Menon,Customer Support,Surat Hub,May 2026,25,24,96.0,550,582,105.8,99.5,97.77,1.6,13,3.8
+NSF2008,Chirag Menon,Customer Support,Surat Hub,Jun 2026,26,25,96.2,690,782,113.3,94.6,98.47,2.4,12,6.5
+NSF2008,Chirag Menon,Customer Support,Surat Hub,Jul 2026,26,26,100.0,600,588,98.0,94.0,98.98,2.4,6,14.4
+NSF2008,Chirag Menon,Customer Support,Surat Hub,Aug 2026,26,25,96.2,550,700,127.3,97.9,99.57,2.3,3,9.1
+NSF2008,Chirag Menon,Customer Support,Surat Hub,Sep 2026,25,25,100.0,570,702,123.2,96.4,98.01,1.5,14,4.2
+NSF2009,Madhav Chatterjee,Customer Support,Surat Hub,May 2026,25,24,96.0,730,811,111.1,94.9,98.4,2.0,13,14.7
+NSF2009,Madhav Chatterjee,Customer Support,Surat Hub,Jun 2026,26,23,88.5,920,1027,111.6,94.0,97.37,2.2,27,2.7
+NSF2009,Madhav Chatterjee,Customer Support,Surat Hub,Jul 2026,26,24,92.3,700,784,112.0,99.2,97.19,1.9,22,9.8
+NSF2009,Madhav Chatterjee,Customer Support,Surat Hub,Aug 2026,26,26,100.0,650,723,111.2,97.3,96.68,2.0,24,0.9
+NSF2009,Madhav Chatterjee,Customer Support,Surat Hub,Sep 2026,25,24,96.0,700,750,107.1,98.5,99.33,2.0,5,14.6
+NSF2010,Hemant Raman,Delivery,Delhi Hub,May 2026,25,23,92.0,1160,1263,108.9,99.1,97.39,5.3,33,23.7
+NSF2010,Hemant Raman,Delivery,Delhi Hub,Jun 2026,26,25,96.2,1300,1469,113.0,94.3,98.43,6.0,23,10.4
+NSF2010,Hemant Raman,Delivery,Delhi Hub,Jul 2026,26,24,92.3,1680,1729,102.9,92.9,97.74,6.3,39,23.8
+NSF2010,Hemant Raman,Delivery,Delhi Hub,Aug 2026,26,25,96.2,1070,1160,108.4,99.5,98.28,5.4,20,9.6
+NSF2010,Hemant Raman,Delivery,Delhi Hub,Sep 2026,25,25,100.0,1440,1784,123.9,99.5,97.37,5.7,47,14.6
+NSF2011,Amrita Nanda,Customer Support,Kochi Hub,May 2026,25,21,84.0,520,482,92.7,86.1,98.55,2.6,7,9.1
+NSF2011,Amrita Nanda,Customer Support,Kochi Hub,Jun 2026,26,24,92.3,530,457,86.2,89.0,97.37,2.2,12,21.6
+NSF2011,Amrita Nanda,Customer Support,Kochi Hub,Jul 2026,26,26,100.0,750,713,95.1,86.5,95.79,2.5,30,28.0
+NSF2011,Amrita Nanda,Customer Support,Kochi Hub,Aug 2026,26,25,96.2,670,664,99.1,91.5,96.84,2.3,21,17.9
+NSF2011,Amrita Nanda,Customer Support,Kochi Hub,Sep 2026,25,23,92.0,570,510,89.5,93.8,96.27,1.7,19,10.8
+NSF2012,Amrita Pillai,Customer Support,Kochi Hub,May 2026,25,24,96.0,590,648,109.8,93.5,97.53,2.3,16,14.2
+NSF2012,Amrita Pillai,Customer Support,Kochi Hub,Jun 2026,26,26,100.0,910,1086,119.3,98.6,97.42,2.1,28,12.7
+NSF2012,Amrita Pillai,Customer Support,Kochi Hub,Jul 2026,26,25,96.2,810,688,84.9,94.1,97.53,2.2,17,15.4
+NSF2012,Amrita Pillai,Customer Support,Kochi Hub,Aug 2026,26,26,100.0,840,816,97.1,91.0,97.3,2.4,22,13.6
+NSF2012,Amrita Pillai,Customer Support,Kochi Hub,Sep 2026,25,23,92.0,600,518,86.3,96.6,98.65,1.7,7,25.4
+NSF2013,Farida Iyengar,Delivery,Jaipur Hub,May 2026,25,24,96.0,1300,1425,109.6,87.2,99.02,6.3,14,16.2
+NSF2013,Farida Iyengar,Delivery,Jaipur Hub,Jun 2026,26,26,100.0,1350,1363,101.0,87.3,96.63,6.7,46,5.8
+NSF2013,Farida Iyengar,Delivery,Jaipur Hub,Jul 2026,26,25,96.2,1820,1543,84.8,86.8,95.92,7.0,63,12.5
+NSF2013,Farida Iyengar,Delivery,Jaipur Hub,Aug 2026,26,25,96.2,1380,1313,95.1,90.1,98.17,6.2,24,11.1
+NSF2013,Farida Iyengar,Delivery,Jaipur Hub,Sep 2026,25,24,96.0,1350,1393,103.2,91.8,97.34,6.3,37,10.1
+NSF2014,Hemant Banerjee,Warehouse,Delhi Hub,May 2026,25,23,92.0,1330,1324,99.5,92.9,97.73,2.3,30,8.9
+NSF2014,Hemant Banerjee,Warehouse,Delhi Hub,Jun 2026,26,25,96.2,1080,1118,103.5,90.3,98.75,2.6,14,21.7
+NSF2014,Hemant Banerjee,Warehouse,Delhi Hub,Jul 2026,26,26,100.0,1630,1792,109.9,92.4,97.99,2.8,36,10.8
+NSF2014,Hemant Banerjee,Warehouse,Delhi Hub,Aug 2026,26,26,100.0,1120,1049,93.7,95.9,97.62,3.0,25,1.8
+NSF2014,Hemant Banerjee,Warehouse,Delhi Hub,Sep 2026,25,23,92.0,990,1170,118.2,96.8,99.15,2.0,10,18.6
+NSF2015,Lokesh Agarwal,Operations,Kochi Hub,May 2026,25,24,96.0,550,475,86.4,86.9,97.47,4.4,12,8.7
+NSF2015,Lokesh Agarwal,Operations,Kochi Hub,Jun 2026,26,24,92.3,490,392,80.0,82.0,96.94,4.3,12,4.6
+NSF2015,Lokesh Agarwal,Operations,Kochi Hub,Jul 2026,26,26,100.0,580,532,91.7,86.4,96.05,4.9,21,22.7
+NSF2015,Lokesh Agarwal,Operations,Kochi Hub,Aug 2026,26,23,88.5,410,347,84.6,83.5,95.97,4.7,14,6.6
+NSF2015,Lokesh Agarwal,Operations,Kochi Hub,Sep 2026,25,24,96.0,430,373,86.7,83.4,97.59,4.7,9,11.0

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Employee Performance Analytics · Logistics</title>
+<link rel="stylesheet" href="css/style.css?v=20260929-5">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ============================================================ sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">TL</div>
+      <div class="brand-text">
+        <strong>TransLink Logistics</strong>
+        <span>People Analytics</span>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-view="overview"><span class="ico">▦</span>Overview</button>
+      <button class="nav-item" data-view="people"><span class="ico">☰</span>Employee Table</button>
+      <button class="nav-item" data-view="insights"><span class="ico">✦</span>Insights</button>
+    </nav>
+
+    <div class="side-card">
+      <h4>Performance Index</h4>
+      <p>Achievement 35% · SLA 25% · Accuracy 25% · Attendance 15%</p>
+      <ul class="legend">
+        <li><i class="dot good"></i>Performing <b>96.5+</b></li>
+        <li><i class="dot mid"></i>On Track <b>93 – 96.5</b></li>
+        <li><i class="dot bad"></i>Needs Attention <b>&lt; 93</b></li>
+      </ul>
+    </div>
+
+    <div class="side-foot">
+      <button id="btnImport" class="btn sm">⤒ Import your own data</button>
+      <button id="btnCsv" class="btn ghost sm">⤓ Export filtered CSV</button>
+      <p class="muted xs" id="dataFoot"></p>
+    </div>
+  </aside>
+
+  <!-- ============================================================== main -->
+  <main class="main">
+
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="btnMenu">☰</button>
+      <div class="titles">
+        <h1 id="viewTitle">Performance Overview</h1>
+        <p id="viewSub">How the network, its hubs and its people are performing</p>
+      </div>
+      <div class="top-right">
+        <span class="pill" id="scopePill">All months · All departments</span>
+      </div>
+    </header>
+
+    <!-- imported-data banner -->
+    <div class="banner hidden" id="dataBanner">
+      <span class="bdot"></span>
+      <span id="bannerText"></span>
+      <button id="btnBannerSample" class="btn ghost sm">Back to sample data</button>
+    </div>
+
+    <!-- filter bar -->
+    <section class="filters">
+      <div class="f">
+        <label>Month</label>
+        <div id="fMonth"></div>
+      </div>
+      <div class="f">
+        <label>Department</label>
+        <div id="fDept"></div>
+      </div>
+      <div class="f">
+        <label>Location / Hub</label>
+        <div id="fHub"></div>
+      </div>
+      <div class="f grow">
+        <label>Employee</label>
+        <div id="fEmp"></div>
+      </div>
+      <button id="btnReset" class="btn ghost">Reset filters</button>
+      <span class="rec-count" id="recCount"></span>
+    </section>
+
+    <!-- ========================================================= overview -->
+    <section class="view" id="view-overview">
+
+      <div class="kpis" id="kpis"></div>
+
+      <div class="grid">
+        <article class="card w8">
+          <div class="card-head">
+            <div>
+              <h3>Monthly Performance Trend</h3>
+              <p>Target achievement, SLA and accuracy across the period</p>
+            </div>
+            <span class="tag" id="trendTag"></span>
+          </div>
+          <div class="chart" style="height:290px"><canvas id="cTrend"></canvas></div>
+        </article>
+
+        <article class="card w4">
+          <div class="card-head">
+            <div>
+              <h3>Department Performance</h3>
+              <p>Average target achievement vs SLA</p>
+            </div>
+          </div>
+          <div class="chart" style="height:290px"><canvas id="cDept"></canvas></div>
+        </article>
+
+        <article class="card w6">
+          <div class="card-head">
+            <div>
+              <h3>Location / Hub Comparison</h3>
+              <p>Performance index by hub — lowest hub needs attention</p>
+            </div>
+          </div>
+          <div class="chart" style="height:340px"><canvas id="cHub"></canvas></div>
+        </article>
+
+        <article class="card w6">
+          <div class="card-head">
+            <div>
+              <h3>Top 10 Employees</h3>
+              <p>Ranked by performance index — best at the bottom</p>
+            </div>
+          </div>
+          <div class="chart" style="height:340px"><canvas id="cTop"></canvas></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================================================== people -->
+    <section class="view hidden" id="view-people">
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h3>Employee Performance Table</h3>
+            <p>Click any row to open the employee drill-down</p>
+          </div>
+          <div class="head-tools">
+            <input type="search" id="tblSearch" placeholder="Search name, ID, department…">
+            <select id="tblBand">
+              <option value="all">All bands</option>
+              <option value="Performing">Performing</option>
+              <option value="On Track">On Track</option>
+              <option value="Needs Attention">Needs Attention</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="tbl" id="empTable">
+            <thead>
+              <tr>
+                <th data-sort="name" class="left">Employee</th>
+                <th data-sort="dept" class="left">Department</th>
+                <th data-sort="hub" class="left">Location / Hub</th>
+                <th data-sort="target">Target</th>
+                <th data-sort="actual">Actual</th>
+                <th data-sort="achievement">Achv&nbsp;%</th>
+                <th data-sort="attendance">Attend&nbsp;%</th>
+                <th data-sort="sla">SLA %</th>
+                <th data-sort="accuracy">Acc&nbsp;%</th>
+                <th data-sort="errors">Errors</th>
+                <th data-sort="score">Index</th>
+              </tr>
+            </thead>
+            <tbody id="empBody"></tbody>
+          </table>
+        </div>
+        <div class="table-foot">
+          <span id="tblInfo"></span>
+          <button id="btnMore" class="btn ghost sm">Show 50 more</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- ========================================================= insights -->
+    <section class="view hidden" id="view-insights">
+      <div class="grid">
+        <article class="card w5">
+          <div class="card-head"><div><h3>What management should know</h3><p>Generated from the current filter selection</p></div></div>
+          <ul class="insights" id="insightList"></ul>
+        </article>
+        <article class="card w7">
+          <div class="card-head"><div><h3>Employees below target</h3><p>Lowest achievement in the selected scope</p></div></div>
+          <div class="table-wrap short">
+            <table class="tbl compact">
+              <thead><tr><th class="left">Employee</th><th class="left">Dept</th><th class="left">Location</th><th>Achv&nbsp;%</th><th>SLA&nbsp;%</th><th>Index</th></tr></thead>
+              <tbody id="lowBody"></tbody>
+            </table>
+          </div>
+        </article>
+        <article class="card w5">
+          <div class="card-head"><div><h3>Department scorecard</h3><p>Where the strength and the gaps are</p></div></div>
+          <div class="table-wrap short">
+            <table class="tbl compact">
+              <thead><tr><th class="left">Department</th><th>Staff</th><th>Ach&nbsp;%</th><th>SLA&nbsp;%</th><th>Acc&nbsp;%</th><th>Index</th></tr></thead>
+              <tbody id="deptBody"></tbody>
+            </table>
+          </div>
+        </article>
+        <article class="card w7">
+          <div class="card-head"><div><h3>Hub scorecard</h3><p>Location health at a glance</p></div></div>
+          <div class="table-wrap short">
+            <table class="tbl compact">
+              <thead><tr><th class="left">Location / Hub</th><th>Staff</th><th>Achv&nbsp;%</th><th>SLA&nbsp;%</th><th>Attend&nbsp;%</th><th>TAT</th><th>Index</th></tr></thead>
+              <tbody id="hubBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============================================================== modal -->
+<div class="overlay hidden" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mName">
+    <header class="modal-head">
+      <div>
+        <h2 id="mName">—</h2>
+        <p id="mMeta">—</p>
+      </div>
+      <button class="icon-btn" id="btnClose" aria-label="Close">✕</button>
+    </header>
+    <div class="modal-body">
+      <div class="mini-kpis" id="mKpis"></div>
+      <div class="modal-grid">
+        <div class="mini-card">
+          <h4>Target vs Actual by month</h4>
+          <div class="chart" style="height:230px"><canvas id="cMTarget"></canvas></div>
+        </div>
+        <div class="mini-card">
+          <h4>Monthly performance trend</h4>
+          <div class="chart" style="height:230px"><canvas id="cMTrend"></canvas></div>
+        </div>
+      </div>
+      <div class="mini-card">
+        <h4>Month-by-month detail</h4>
+        <div class="table-wrap short">
+          <table class="tbl compact">
+            <thead><tr><th class="left">Month</th><th>Days Present</th><th>Attend&nbsp;%</th><th>Target</th><th>Actual</th><th>Achv&nbsp;%</th><th>SLA&nbsp;%</th><th>Acc&nbsp;%</th><th>TAT</th><th>Errors</th><th>OT&nbsp;hrs</th><th>Index</th></tr></thead>
+            <tbody id="mBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="note" id="mNote"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================= import dialog -->
+<div class="overlay hidden" id="importOverlay">
+  <div class="modal narrow" role="dialog" aria-modal="true" aria-labelledby="importTitle">
+    <header class="modal-head">
+      <div>
+        <h2 id="importTitle">Import your own data</h2>
+        <p>Load a CSV of monthly employee performance — everything on the dashboard rebuilds from it</p>
+      </div>
+      <button class="icon-btn" id="btnImportClose" aria-label="Close">✕</button>
+    </header>
+    <div class="modal-body">
+
+      <div class="dropzone" id="dropZone">
+        <div class="dz-ico">⬆</div>
+        <p><b>Drop a CSV file here</b></p>
+        <p class="muted">or</p>
+        <button class="btn" id="btnPick">Choose a file…</button>
+        <input type="file" id="fileInput" accept=".csv,text/csv" hidden>
+      </div>
+
+      <div id="importResult" class="import-result hidden"></div>
+
+      <div class="mini-card">
+        <h4>Expected columns</h4>
+        <p class="muted" style="margin-bottom:10px">One row per employee per month. Column order does not matter and common
+          header spellings are accepted (e.g. <i>Location</i>, <i>Hub</i> or <i>Branch</i> all work).</p>
+        <div class="col-lists">
+          <div>
+            <h5>Required</h5>
+            <ul>
+              <li>Employee ID</li><li>Employee Name</li><li>Department</li>
+              <li>Location / Hub</li><li>Month</li><li>Monthly Target</li>
+              <li>Actual Handled</li><li>SLA %</li><li>Accuracy %</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Optional</h5>
+            <ul>
+              <li>Working Days</li><li>Present Days</li>
+              <li>Attendance % <span class="muted">(else from days, else 100)</span></li>
+              <li>Target Achievement % <span class="muted">(else actual ÷ target)</span></li>
+              <li>Average TAT (hrs)</li><li>Error / Rework Count</li><li>Overtime Hours</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted xs" style="margin-top:10px">Month accepts <code>Sep 2026</code>, <code>2026-09</code>,
+          <code>09/2026</code> or a full date. The Performance Index is recalculated with the published weights.
+          Nothing is uploaded anywhere — the file is read in your browser.</p>
+      </div>
+
+      <div class="dlg-actions">
+        <button class="btn ghost" id="btnTemplate">⤓ Download CSV template</button>
+        <a class="btn ghost" href="sample-import.csv" download>⤓ Download sample data file</a>
+        <button class="btn ghost" id="btnSample">↺ Restore built-in sample data</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="vendor/chart.umd.js?v=20260929-5"></script>
+<script src="js/data.js?v=20260929-5"></script>
+<script src="js/app.js?v=20260929-5"></script>
+</body>
+</html>
